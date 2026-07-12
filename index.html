@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kallm — Blocca i call center. Il resto squilla.</title>
+<meta name="description" content="Kallm è un'app iOS gratuita che blocca le chiamate dei call center e degli spammer noti. Nessun account, nessun abbonamento, nessun dato raccolto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --carta: #F5F3EE;
+    --superficie: #FFFFFF;
+    --inchiostro: #24272A;
+    --salvia: #6F8F63;
+    --mattone: #C2452F;
+    --pietra: #878C88;
+    --linea: rgba(135, 140, 136, .28);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --carta: #24272A;
+      --superficie: #2D3134;
+      --inchiostro: #F5F3EE;
+      --linea: rgba(245, 243, 238, .16);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--carta);
+    color: var(--inchiostro);
+    font-family: "Outfit", -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .contenitore { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- barra ---------- */
+  header {
+    padding: 22px 0;
+  }
+  header .contenitore {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .lockup { display: flex; align-items: center; gap: 9px; text-decoration: none; color: inherit; }
+  .lockup svg { width: 26px; height: 26px; }
+  .lockup span { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; }
+  nav a {
+    color: var(--pietra); text-decoration: none; font-size: 15px;
+    margin-left: 22px; transition: color .2s;
+  }
+  nav a:hover { color: var(--salvia); }
+
+  /* ---------- eroe ---------- */
+  .eroe {
+    position: relative;
+    text-align: center;
+    padding: 60px 0 80px;
+  }
+  .onde {
+    position: relative;
+    width: 340px; height: 340px;
+    margin: 0 auto 8px;
+  }
+  .onda {
+    position: absolute; inset: 0; margin: auto;
+    border: 1px solid var(--linea);
+    border-radius: 50%;
+    animation: respira 4s ease-in-out infinite;
+  }
+  .onda:nth-child(1) { width: 110px; height: 110px; animation-delay: 0s; }
+  .onda:nth-child(2) { width: 180px; height: 180px; animation-delay: .35s; }
+  .onda:nth-child(3) { width: 250px; height: 250px; animation-delay: .7s; }
+  .onda:nth-child(4) { width: 320px; height: 320px; animation-delay: 1.05s; }
+  @keyframes respira {
+    0%, 100% { transform: scale(1); opacity: .9; }
+    50%      { transform: scale(1.05); opacity: .5; }
+  }
+  .pallino {
+    position: absolute; inset: 0; margin: auto;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--salvia);
+  }
+  .alone {
+    position: absolute; inset: 0; margin: auto;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--salvia); opacity: .22;
+    animation: pulsa 4s ease-in-out infinite;
+  }
+  @keyframes pulsa {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(2.1); }
+  }
+  h1 {
+    font-size: clamp(38px, 7vw, 62px);
+    font-weight: 700; letter-spacing: -0.03em; line-height: 1.08;
+  }
+  h1 em { font-style: normal; color: var(--salvia); }
+  .sotto {
+    margin: 18px auto 0; max-width: 54ch;
+    font-size: 18px; color: var(--pietra); font-weight: 300;
+  }
+  .cta-riga { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .bottone {
+    display: inline-block; text-decoration: none;
+    font-size: 17px; font-weight: 600;
+    padding: 15px 30px; border-radius: 12px;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  .bottone:hover { transform: translateY(-1px); }
+  .bottone.pieno { background: var(--salvia); color: #fff; }
+  .bottone.vuoto { border: 1px solid var(--linea); color: var(--inchiostro); }
+  .nota-store {
+    margin-top: 14px; font-size: 13.5px; color: var(--pietra);
+    letter-spacing: .08em; text-transform: uppercase; font-weight: 500;
+  }
+
+  /* ---------- promesse ---------- */
+  .promesse {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    padding: 30px 0 10px;
+  }
+  @media (max-width: 720px) { .promesse { grid-template-columns: 1fr; } }
+  .promessa {
+    background: var(--superficie);
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+    padding: 26px 24px;
+  }
+  .promessa .num {
+    font-size: 13px; font-weight: 600; letter-spacing: .12em;
+    color: var(--salvia); text-transform: uppercase;
+  }
+  .promessa h3 { font-size: 19px; font-weight: 600; margin-top: 8px; letter-spacing: -0.01em; }
+  .promessa p { font-size: 15px; color: var(--pietra); margin-top: 6px; }
+
+  /* ---------- come funziona ---------- */
+  section { padding: 72px 0 0; }
+  .etichetta {
+    font-size: 12px; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--salvia);
+  }
+  h2 { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; margin-top: 8px; }
+  .passi { margin-top: 26px; }
+  .passo {
+    display: grid; grid-template-columns: 52px 1fr; gap: 18px;
+    padding: 20px 0; border-top: 1px solid var(--linea);
+  }
+  .passo:last-child { border-bottom: 1px solid var(--linea); }
+  .passo .n {
+    font-size: 15px; font-weight: 600; color: var(--salvia);
+    width: 34px; height: 34px; border: 1px solid var(--linea); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .passo h4 { font-size: 17.5px; font-weight: 600; }
+  .passo p { font-size: 15.5px; color: var(--pietra); margin-top: 3px; max-width: 62ch; }
+
+  /* ---------- onestà ---------- */
+  .onesta {
+    margin-top: 72px;
+    background: var(--superficie);
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+    padding: 30px 28px;
+  }
+  .onesta h3 { font-size: 20px; font-weight: 600; }
+  .onesta p { font-size: 15.5px; color: var(--pietra); margin-top: 8px; max-width: 70ch; }
+  .onesta strong { color: var(--inchiostro); font-weight: 500; }
+
+  /* ---------- community ---------- */
+  .community p { font-size: 16px; color: var(--pietra); margin-top: 12px; max-width: 62ch; }
+  .community a { color: var(--salvia); text-decoration: none; font-weight: 500; }
+  .community a:hover { text-decoration: underline; }
+
+  /* ---------- piè ---------- */
+  footer {
+    margin-top: 90px; padding: 28px 0 40px;
+    border-top: 1px solid var(--linea);
+    font-size: 14px; color: var(--pietra);
+  }
+  footer .contenitore { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--pietra); text-decoration: none; margin-left: 18px; }
+  footer a:hover { color: var(--salvia); }
+
+  /* comparsa dolce */
+  .sale { animation: sale .8s cubic-bezier(.2,.7,.3,1) both; }
+  .sale2 { animation: sale .8s .12s cubic-bezier(.2,.7,.3,1) both; }
+  .sale3 { animation: sale .8s .24s cubic-bezier(.2,.7,.3,1) both; }
+  @keyframes sale {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="contenitore">
+    <a class="lockup" href="#">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <g stroke="#6F8F63" stroke-width="7" stroke-linecap="round">
+          <path d="M14 14 L50 50"/><path d="M50 14 L14 50"/>
+        </g>
+        <g fill="#6F8F63">
+          <circle cx="14" cy="14" r="6.5"/><circle cx="50" cy="50" r="6.5"/>
+          <circle cx="50" cy="14" r="6.5"/><circle cx="14" cy="50" r="6.5"/>
+        </g>
+      </svg>
+      <span>Kallm</span>
+    </a>
+    <nav>
+      <a href="#come">Come funziona</a>
+      <a href="#community">Community</a>
+    </nav>
+  </div>
+</header>
+
+<main class="contenitore">
+
+  <!-- Eroe -->
+  <div class="eroe">
+    <div class="onde sale" aria-hidden="true">
+      <div class="onda"></div><div class="onda"></div>
+      <div class="onda"></div><div class="onda"></div>
+      <div class="alone"></div>
+      <div class="pallino"></div>
+    </div>
+    <h1 class="sale">Il tuo telefono, <em>calmo</em>.</h1>
+    <p class="sotto sale2">Kallm blocca le chiamate dei call center e degli spammer
+    segnalati dalla community. Tutto il resto squilla normalmente: un corriere,
+    un medico, un nuovo cliente passano sempre.</p>
+    <div class="cta-riga sale3">
+      <a class="bottone pieno" href="#come">Scopri come funziona</a>
+      <a class="bottone vuoto" href="https://github.com/thesqual87/blocklist-telefonica-italia">La lista pubblica</a>
+    </div>
+    <p class="nota-store sale3">Presto su App Store · Gratis</p>
+  </div>
+
+  <!-- Le tre promesse -->
+  <div class="promesse">
+    <div class="promessa">
+      <div class="num">Solo i segnalati</div>
+      <h3>Niente blocchi alla cieca</h3>
+      <p>Kallm ferma solo i numeri segnalati nei database spam, non gli
+      sconosciuti in generale. Il contrario del filtro indiscriminato.</p>
+    </div>
+    <div class="promessa">
+      <div class="num">Zero dati</div>
+      <h3>Nessun account, nessuna traccia</h3>
+      <p>Niente registrazione, niente server nostri, nessun dato raccolto.
+      Kallm non sa chi sei né chi ti chiama.</p>
+    </div>
+    <div class="promessa">
+      <div class="num">Community</div>
+      <h3>Una lista aperta, di tutti</h3>
+      <p>Le segnalazioni alimentano una blocklist pubblica con licenza aperta,
+      che chiunque può consultare e riusare.</p>
+    </div>
+  </div>
+
+  <!-- Come funziona -->
+  <section id="come">
+    <div class="etichetta">Come funziona</div>
+    <h2>Tre passaggi, poi il silenzio</h2>
+    <div class="passi">
+      <div class="passo">
+        <div class="n">1</div>
+        <div>
+          <h4>Scarichi la lista</h4>
+          <p>All'apertura e ogni notte, Kallm aggiorna sul telefono l'elenco dei
+          numeri segnalati dalla community italiana ed europea.</p>
+        </div>
+      </div>
+      <div class="passo">
+        <div class="n">2</div>
+        <div>
+          <h4>iOS fa la guardia</h4>
+          <p>Il confronto avviene dentro il telefono, in un istante, anche
+          offline. Scegli tu: blocco totale, o squillo con l'etichetta "SPAM".</p>
+        </div>
+      </div>
+      <div class="passo">
+        <div class="n">3</div>
+        <div>
+          <h4>Segnali chi disturba</h4>
+          <p>Uno swipe su una chiamata nei Recenti e il numero viene segnalato
+          alla community: la tua segnalazione protegge tutti gli altri.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="onesta">
+      <h3>Una promessa onesta</h3>
+      <p>Nessuna app può fermare tutto lo spam: i numeri cambiano, lo spoofing
+      esiste. Kallm <strong>riduce drasticamente</strong> le chiamate moleste,
+      non le elimina — e non ti diremo mai il contrario. E siccome i tuoi
+      contatti non vengono mai bloccati, chi conosci squilla sempre.</p>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community" class="community">
+    <div class="etichetta">Community</div>
+    <h2>La prima blocklist telefonica italiana aperta</h2>
+    <p>In Germania, Spagna e Francia esistono da anni liste pubbliche di numeri
+    spam. In Italia mancava: l'abbiamo creata. È un progetto indipendente con
+    licenza CC BY-SA, mantenuto con segnalazioni verificate — e ogni utente di
+    Kallm la fa crescere.</p>
+    <p><a href="https://github.com/thesqual87/blocklist-telefonica-italia">
+    Consulta o contribuisci alla lista su GitHub →</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="contenitore">
+    <span>© 2026 Kallm — un progetto indipendente italiano</span>
+    <span>
+      <a href="https://github.com/thesqual87/blocklist-telefonica-italia">GitHub</a>
+      <a href="mailto:lucascardanzan87@gmail.com">Contatti</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
