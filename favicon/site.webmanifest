@@ -1,0 +1,11 @@
+{
+  "name": "Kallm",
+  "short_name": "Kallm",
+  "icons": [
+    { "src": "/favicon/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#F5F3EE",
+  "background_color": "#F5F3EE",
+  "display": "browser"
+}

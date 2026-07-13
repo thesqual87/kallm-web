@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kallm — Blocca i call center. Il resto squilla.</title>
 <meta name="description" content="Kallm è un'app iOS gratuita che blocca le chiamate dei call center e degli spammer noti. Nessun account, nessun abbonamento, nessun dato raccolto.">
+
+<!-- Icone -->
+<link rel="icon" href="/favicon/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<meta name="theme-color" content="#F5F3EE">
+
+<!-- Anteprima social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kallm.app/">
+<meta property="og:title" content="Kallm — Blocca i call center. Il resto squilla.">
+<meta property="og:description" content="App iOS gratuita che blocca le chiamate dei call center e degli spammer noti. Nessun account, nessun abbonamento, nessun dato raccolto.">
+<meta property="og:image" content="https://kallm.app/favicon/icon-512.png">
+<meta name="twitter:card" content="summary">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -44,8 +61,12 @@
   header .contenitore {
     display: flex; align-items: center; justify-content: space-between;
   }
-  .lockup { display: flex; align-items: center; gap: 9px; text-decoration: none; color: inherit; }
-  .lockup svg { width: 26px; height: 26px; }
+  .lockup { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+  .lockup img {
+    width: 30px; height: 30px; display: block;
+    border-radius: 8px;
+    border: 1px solid var(--linea);
+  }
   .lockup span { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; }
   nav a {
     color: var(--pietra); text-decoration: none; font-size: 15px;
@@ -199,15 +220,7 @@
 <header>
   <div class="contenitore">
     <a class="lockup" href="#">
-      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-        <g stroke="#6F8F63" stroke-width="7" stroke-linecap="round">
-          <path d="M14 14 L50 50"/><path d="M50 14 L14 50"/>
-        </g>
-        <g fill="#6F8F63">
-          <circle cx="14" cy="14" r="6.5"/><circle cx="50" cy="50" r="6.5"/>
-          <circle cx="50" cy="14" r="6.5"/><circle cx="14" cy="50" r="6.5"/>
-        </g>
-      </svg>
+      <img src="/favicon/logo.png" alt="Logo di Kallm" width="30" height="30">
       <span>Kallm</span>
     </a>
     <nav>
