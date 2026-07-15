@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy — Kallm</title>
+<meta name="description" content="Informativa privacy di Kallm: nessun account, nessun dato raccolto. Come funzionano le segnalazioni e come chiedere la rimozione di un numero.">
+
+<!-- Icone -->
+<link rel="icon" href="/favicon/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
+<meta name="theme-color" content="#F5F3EE">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --carta: #F5F3EE;
+    --superficie: #FFFFFF;
+    --inchiostro: #24272A;
+    --salvia: #6F8F63;
+    --mattone: #C2452F;
+    --pietra: #878C88;
+    --linea: rgba(135, 140, 136, .28);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --carta: #24272A;
+      --superficie: #2D3134;
+      --inchiostro: #F5F3EE;
+      --linea: rgba(245, 243, 238, .16);
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--carta);
+    color: var(--inchiostro);
+    font-family: "Outfit", -apple-system, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .contenitore { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 22px 0; }
+  header .contenitore {
+    max-width: 960px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .lockup { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+  .lockup img {
+    width: 30px; height: 30px; display: block;
+    border-radius: 8px;
+    border: 1px solid var(--linea);
+  }
+  .lockup span { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; }
+  nav a {
+    color: var(--pietra); text-decoration: none; font-size: 15px;
+    margin-left: 22px; transition: color .2s;
+  }
+  nav a:hover { color: var(--salvia); }
+
+  .etichetta {
+    margin-top: 46px;
+    font-size: 12px; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--salvia);
+  }
+  h1 { font-size: clamp(30px, 5vw, 40px); font-weight: 700; letter-spacing: -0.03em; margin-top: 8px; }
+  .aggiornata { font-size: 14px; color: var(--pietra); margin-top: 10px; }
+
+  h2 { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; margin-top: 44px; }
+  p { font-size: 16.5px; margin-top: 12px; }
+  p.grigia { color: var(--pietra); }
+  strong { font-weight: 600; }
+  a { color: var(--salvia); }
+
+  .riquadro {
+    margin-top: 28px;
+    background: var(--superficie);
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+    padding: 24px 26px;
+  }
+  .riquadro p:first-child { margin-top: 0; }
+
+  footer {
+    margin-top: 90px; padding: 28px 0 40px;
+    border-top: 1px solid var(--linea);
+    font-size: 14px; color: var(--pietra);
+  }
+  footer .contenitore { max-width: 960px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--pietra); text-decoration: none; margin-left: 18px; }
+  footer a:hover { color: var(--salvia); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="contenitore">
+    <a class="lockup" href="/">
+      <img src="/favicon/logo.png" alt="Logo di Kallm" width="30" height="30">
+      <span>Kallm</span>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main class="contenitore">
+
+  <div class="etichetta">Informativa privacy</div>
+  <h1>La privacy, senza asterischi.</h1>
+  <p class="aggiornata">Ultimo aggiornamento: [DATA DI PUBBLICAZIONE]</p>
+
+  <div class="riquadro">
+    <p><strong>In una riga:</strong> Kallm non ha account, non raccoglie i tuoi dati
+    e non sa chi sei. L'unica informazione che può lasciare il tuo telefono è una
+    segnalazione di spam, se e quando decidi tu di inviarla.</p>
+  </div>
+
+  <h2>Chi è il titolare</h2>
+  <p>Kallm è un progetto indipendente italiano di Luca Scardanzan.
+  Per qualunque domanda su questa informativa puoi scrivere a
+  <a href="mailto:support@kallm.app">support@kallm.app</a>.</p>
+
+  <h2>Che cosa NON raccogliamo</h2>
+  <p>Kallm non prevede registrazione né account. Non raccogliamo nome, email,
+  numero di telefono, posizione, identificatori pubblicitari. Non usiamo
+  strumenti di analisi o tracciamento, né nell'app né su questo sito.
+  Il registro delle tue chiamate non lascia mai il telefono: il confronto tra
+  i numeri che ti chiamano e la lista di blocco avviene interamente sul
+  dispositivo. L'app non accede alla tua rubrica.</p>
+
+  <h2>La lista di blocco</h2>
+  <p>All'apertura e periodicamente, l'app scarica l'elenco aggiornato dei numeri
+  segnalati come indesiderati. È un semplice download: come per qualunque
+  download, i server che ospitano la lista (GitHub e PhoneBlock) vedono
+  l'indirizzo IP della richiesta per il tempo tecnico necessario, come previsto
+  dalle rispettive informative. Kallm non aggiunge alcuna informazione sua.</p>
+
+  <h2>Le segnalazioni</h2>
+  <p>Il blocco delle chiamate funziona senza alcun account. Se però vuoi anche
+  <strong>segnalare</strong> i numeri che ti disturbano, l'app ti propone di
+  collegare un account gratuito del progetto comunitario europeo
+  <a href="https://phoneblock.net">PhoneBlock</a> (server in Germania, Unione
+  Europea): è la community che raccoglie e verifica le segnalazioni. L'account
+  lo crei tu direttamente presso PhoneBlock, secondo la
+  <a href="https://phoneblock.net/phoneblock/datenschutz">loro informativa</a>;
+  Kallm conserva sul tuo telefono solo la chiave di collegamento, e non conosce
+  né la tua email né gli altri dati di quell'account. Puoi scollegarlo o
+  revocarlo quando vuoi.</p>
+  <p>Ogni segnalazione contiene il numero segnalato, la categoria che hai scelto
+  (per esempio "call center") e, se decidi di scriverlo, un commento facoltativo —
+  nient'altro. Le segnalazioni contribuiscono al database PhoneBlock e, in forma
+  di solo numero e categoria, alla <a
+  href="https://github.com/thesqual87/blocklist-telefonica-italia">blocklist
+  pubblica italiana</a> (licenza aperta CC BY-SA).</p>
+  <p class="grigia">Base giuridica: legittimo interesse (art. 6.1.f GDPR) —
+  proteggere la community dalle chiamate indesiderate, che nella maggior parte
+  dei casi violano a loro volta la normativa sul telemarketing.</p>
+
+  <h2>I numeri segnalati e i diritti di chi li possiede</h2>
+  <p>La lista di blocco contiene numeri di telefono segnalati dalla community,
+  quasi sempre appartenenti a call center e società. Un numero entra nella lista
+  distribuita solo dopo segnalazioni multiple e indipendenti. Se ritieni che un
+  numero ti appartenga e sia stato inserito ingiustamente, scrivi a
+  <a href="mailto:support@kallm.app">support@kallm.app</a>: verifichiamo e rispondiamo
+  entro 7 giorni, e in caso di errore il numero viene rimosso.</p>
+
+  <h2>I tuoi diritti</h2>
+  <p>Hai i diritti previsti dal GDPR (accesso, rettifica, cancellazione,
+  opposizione). Nel caso di Kallm c'è poco da esercitare — non abbiamo dati su
+  di te — ma la porta è sempre quella:
+  <a href="mailto:support@kallm.app">support@kallm.app</a>. Hai inoltre il diritto di
+  presentare reclamo al <a href="https://www.garanteprivacy.it">Garante per la
+  protezione dei dati personali</a>.</p>
+
+  <h2>Modifiche</h2>
+  <p>Se questa informativa cambierà, la nuova versione sarà pubblicata su questa
+  pagina con la data di aggiornamento. Non ridurremo mai le tutele descritte qui
+  senza dirlo chiaramente.</p>
+
+</main>
+
+<footer>
+  <div class="contenitore">
+    <span>© 2026 Kallm — un progetto indipendente italiano</span>
+    <span>
+      <a href="https://github.com/thesqual87/blocklist-telefonica-italia">GitHub</a>
+      <a href="mailto:support@kallm.app">Contatti</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
